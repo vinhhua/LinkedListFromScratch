@@ -162,9 +162,9 @@ public class SinglyLinkedList {
         }
     }
 
-    public Node mergeTwoList(Node l1, Node l2) {
-        
-    }
+//    public Node mergeTwoList(Node l1, Node l2) {
+//
+//    }
 
 }
 
