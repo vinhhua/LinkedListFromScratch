@@ -8,5 +8,7 @@ public class DoublyLinkedListTester {
         list.add(20);
         list.add(30);
         System.out.println(list.toString());
+        list.reverseList();
+        System.out.println(list.toString());
     }
 }

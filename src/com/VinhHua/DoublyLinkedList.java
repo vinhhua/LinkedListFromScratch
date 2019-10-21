@@ -77,6 +77,20 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         size++;
     }
 
+    public void reverseList() {
+        Node current = head;
+        Node temp = null;
+        while (current != null) {
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            current = current.prev;
+        }
+        if (temp != null) {
+            head = temp.prev;
+        }
+    }
+
     // Check the value of the first node if it exists, O(1)
     public T peekFirst() {
         if (isEmpty()) throw new RuntimeException("Empty list");
@@ -253,7 +267,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         sb.append("[ ");
         Node<T> trav = head;
         while (trav != null) {
-            sb.append(trav.data + ", ");
+            sb.append(trav.data).append(" -> ");
             trav = trav.next;
         }
         sb.append(" ]");
