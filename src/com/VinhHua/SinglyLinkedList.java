@@ -10,6 +10,10 @@ public class SinglyLinkedList {
         this.size = 0;
     }
 
+    public Node getHead() {
+        return head;
+    }
+
     /**
      * Really simple, first create a new node, then point the new node's reference (newNode.next) = head;
      * Then set the new node as head.
@@ -163,7 +167,24 @@ public class SinglyLinkedList {
     }
 
     public Node mergeTwoList(Node l1, Node l2) {
-        
+        Node newList = new Node(0);
+        Node prev = newList;
+
+        while (l1 != null && l2 != null) {
+            if (l1.data <= l2.data) {
+                prev.next = l1;
+                l1 = l1.next;
+            } else {
+                prev.next = l2;
+                l2 = l2.next;
+            }
+            prev = prev.next;
+        }
+
+        if (l1 == null) prev.next = l2;
+        if (l2 == null) prev.next = l1;
+
+        return newList.next;
     }
 
 }
