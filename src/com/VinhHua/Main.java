@@ -15,6 +15,7 @@ public class Main {
         list2.addSortedOrder(6);
         list2.addSortedOrder(7);
         list2.addSortedOrder(10);
+        list2.addSortedOrder(12);
         System.out.print("List 1: ");
         list.printList();
         System.out.print("List 2: ");
